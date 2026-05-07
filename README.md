@@ -39,7 +39,7 @@ The features were added to solve specific user needs and enhance the overall uti
 
 ## Architecture Diagram
 
-![SpendSnap Architecture](architecture-diagram.svg)
+<img src="./architecture-diagram.svg" alt="SpendSnap Architecture" width="840" />
 
 The architecture follows a clean layered approach with clear separation of concerns:
 - **Presentation Layer**: Handles user interface components built with Flutter.

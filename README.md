@@ -39,7 +39,37 @@ The features were added to solve specific user needs and enhance the overall uti
 
 ## Architecture Diagram
 
-<img src="./architecture-diagram.svg" alt="SpendSnap Architecture" width="840" />
+```text
+                +------------------------------+
+                |      Presentation Layer      |
+                |  Flutter UI: screens, forms, |
+                |  dashboard widgets           |
+                +--------------+---------------+
+                               |
+                               v
++----------------+   +----------------------+   +------------------------+
+|   AuthProvider |<--|  State Management    |-->| TransactionProvider    |
+|   (login, user |   |  Layer               |   | (transaction history,  |
+|    session)    |   |  Provider + Change   |   |  balance, totals)      |
++----------------+   |  Notifier           |   +------------------------+
+                     |  GoalProvider        |
+                     |  (budget/goals)      |
+                     +----------+-----------+
+                                |
+                                v
+                     +------------------------------+
+                     |   Business Logic Layer       |
+                     |   Firebase services:         |
+                     |   Auth + Realtime Database   |
+                     +--------------+---------------+
+                                    |
+                                    v
+               +-------------------------------------------+
+               |               Data Layer                  |
+               |  Firebase Realtime Database                |
+               |  Data models: Transaction, Goal, User      |
+               +-------------------------------------------+
+```
 
 The architecture follows a clean layered approach with clear separation of concerns:
 - **Presentation Layer**: Handles user interface components built with Flutter.

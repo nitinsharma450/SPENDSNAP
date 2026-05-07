@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="620" viewBox="0 0 960 620" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .title { font: bold 22px 'Segoe UI', sans-serif; fill: #1f2937; }
+    .label { font: 16px 'Segoe UI', sans-serif; fill: #111827; }
+    .box { stroke: #4b5563; stroke-width: 2; rx: 16; fill: #f8fafc; }
+    .box-layer { stroke: #0f172a; stroke-width: 2; rx: 20; fill: #e2e8f0; opacity: 0.95; }
+    .arrow { stroke: #334155; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+    .note { font: 14px 'Segoe UI', sans-serif; fill: #475569; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <text x="40" y="40" class="title">SpendSnap Architecture</text>
+
+  <rect x="40" y="80" width="880" height="120" class="box-layer" />
+  <text x="60" y="110" class="label">Presentation Layer</text>
+  <rect x="80" y="130" width="800" height="60" class="box" />
+  <text x="100" y="155" class="label">Flutter UI</text>
+  <text x="100" y="180" class="label">Screens, widgets, dashboard, forms</text>
+
+  <rect x="40" y="220" width="880" height="120" class="box-layer" />
+  <text x="60" y="250" class="label">State Management Layer</text>
+  <rect x="100" y="290" width="300" height="60" class="box" />
+  <text x="120" y="320" class="label">Provider Package</text>
+  <text x="120" y="340" class="note">ChangeNotifier, MultiProvider</text>
+  <rect x="380" y="290" width="220" height="60" class="box" />
+  <text x="400" y="320" class="label">AuthProvider</text>
+  <rect x="620" y="290" width="220" height="60" class="box" />
+  <text x="640" y="320" class="label">TransactionProvider</text>
+  <text x="640" y="340" class="note">Depends on current user</text>
+  <rect x="380" y="370" width="220" height="60" class="box" />
+  <text x="400" y="400" class="label">GoalProvider</text>
+  <text x="400" y="420" class="note">Budget & savings goals</text>
+
+  <rect x="40" y="360" width="880" height="120" class="box-layer" />
+  <text x="60" y="390" class="label">Business Logic Layer</text>
+  <rect x="280" y="430" width="400" height="80" class="box" />
+  <text x="300" y="465" class="label">Firebase Services</text>
+  <text x="300" y="490" class="note">Authentication, Database read/write, persistence</text>
+
+  <rect x="40" y="500" width="880" height="100" class="box-layer" />
+  <text x="60" y="530" class="label">Data Layer</text>
+  <rect x="120" y="540" width="320" height="60" class="box" />
+  <text x="140" y="575" class="label">Firebase Realtime Database</text>
+  <rect x="520" y="540" width="320" height="60" class="box" />
+  <text x="540" y="575" class="label">Data Models</text>
+  <text x="540" y="595" class="note">Transaction, Goal, User</text>
+
+  <path d="M480 190 L480 250" class="arrow" />
+  <path d="M460 310 L360 330" class="arrow" />
+  <path d="M500 310 L620 330" class="arrow" />
+  <path d="M500 370 L500 430" class="arrow" />
+  <path d="M400 510 L400 540" class="arrow" />
+  <path d="M560 510 L560 540" class="arrow" />
+
+</svg>
